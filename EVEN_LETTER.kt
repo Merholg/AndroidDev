@@ -5,16 +5,16 @@
 
 fun main() 
 {
-    val EvenLetters: MutableList<Char> = mutableListOf()
+    val evenLetters: MutableList<Char> = mutableListOf()
     var c: Char
 
     c = 'A'
     while (c <= 'Z') 
     {
-        EvenLetters.add(c)
+        evenLetters.add(c)
         ++c
     }
     
-    EvenLetters.forEachIndexed { i, e -> if ((i + 1) % 2 == 0 ) print("$e ") }
+    evenLetters.forEachIndexed { i, e -> if ((i + 1) % 2 == 0 ) print("$e ") }
 
 }
