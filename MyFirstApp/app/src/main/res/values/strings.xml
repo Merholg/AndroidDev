@@ -3,4 +3,6 @@
     <string name="ByeTxtVal">Bye</string>
     <string name="HelloTxtVal">Hello</string>
     <string name="ButtonText">Посмотреть поем</string>
+    <string name="NoActivityAppExist">Нет приложения для просмотра</string>
+    <string name="WhatSee">Чем смотреть?</string>
 </resources>
