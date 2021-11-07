@@ -1,6 +1,6 @@
 private const val TAG = "MainActivity"
 
-public static Int d(String tag, String msg)
+// public static Int d(String tag, String msg)
 
 override fun onCreate(savedInstanceState: Bundle?) {
 	super.onCreate(savedInstanceState)
