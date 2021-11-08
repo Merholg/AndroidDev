@@ -1,3 +1,0 @@
-tcp        0      0 localhost:58422         localhost:63342         TIME_WAIT  
-tcp        0      0 localhost:58434         localhost:63342         TIME_WAIT  
-tcp6       0      0 localhost:63342         [::]:*                  LISTEN     
