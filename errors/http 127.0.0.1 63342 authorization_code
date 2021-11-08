@@ -1,0 +1,7 @@
+Call web browser with url - http://127.0.0.1:63342/api/github/oauth/authorization_code?code=00000000000000000000
+
+netstat | grep 63342
+
+tcp        0      0 localhost:58422         localhost:63342         TIME_WAIT  
+tcp        0      0 localhost:58434         localhost:63342         TIME_WAIT  
+tcp6       0      0 localhost:63342         [::]:*                  LISTEN     
