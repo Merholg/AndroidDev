@@ -1,1 +1,4 @@
-    implementation 'com.android.support:recyclerview-v7:23.4.0'
+implementation 'com.android.support:recyclerview-v7:23.4.0' - вот это билдится без ошибок
+
+implementation 'androidx.recyclerview:recyclerview:recyclerview:1.2.0'
+implementation 'androidx.recyclerview:recyclerview-selection:1.1.0'
