@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">DifficultApp</string>
+    <string name="town">Town</string>
+    <string-array name="town_names">
+        <item>Москва</item>
+        <item>Санкт-Петербург</item>
+        <item>Новосибирск</item>
+        <item>Екатеринбург</item>
+        <item>Казань</item>
+        <item>Нижний Новгород</item>
+        <item>Челябинск</item>
+        <item>Омск</item>
+        <item>Самара</item>
+        <item>Ростов-на-Дону</item>
+        <item>Уфа</item>
+        <item>Красноярск</item>
+        <item>Пермь</item>
+        <item>Воронеж</item>
+        <item>Волгоград</item>
+    </string-array>
 </resources>
