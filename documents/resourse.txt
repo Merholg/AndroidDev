@@ -1,0 +1,4 @@
+https://www.youtube.com/watch?v=cDF_yBCflXk
+
+http://developer.alexanderklimov.ru/android/views/recyclerview-kot.php
+http://developer.alexanderklimov.ru/android/views/textview.php
