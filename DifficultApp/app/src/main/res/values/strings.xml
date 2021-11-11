@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">DifficultApp</string>
     <string name="town">Town</string>
+    <string name="capital">Город</string>
+    <string name="region">Регион</string>
     <string-array name="town_names">
         <item>Москва</item>
         <item>Санкт-Петербург</item>
