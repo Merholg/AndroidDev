@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">DifficultApp</string>
-    <string name="town">Town</string>
+    <string name="contentDescription">Region Flag image</string>
     <string name="capital">Город</string>
     <string name="region">Регион</string>
-    <string-array name="town_names">
+    <string-array name="capital_names">
         <item>Москва</item>
         <item>Санкт-Петербург</item>
         <item>Новосибирск</item>
@@ -20,4 +20,39 @@
         <item>Воронеж</item>
         <item>Волгоград</item>
     </string-array>
+    <string-array name="region_names">
+        <item>Москва</item>
+        <item>Санкт-Петербург</item>
+        <item>Новосибирская область</item>
+        <item>Свердловская область</item>
+        <item>Татарстан</item>
+        <item>Нижегородская область</item>
+        <item>Челябинская область</item>
+        <item>Омская область</item>
+        <item>Самарская область</item>
+        <item>Ростовская область</item>
+        <item>Башкортостан</item>
+        <item>Красноярский край</item>
+        <item>Пермский край</item>
+        <item>Воронежская область</item>
+        <item>Волгоградская область</item>
+    </string-array>
+    <integer-array name="pennant_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+    </integer-array>
+
 </resources>
