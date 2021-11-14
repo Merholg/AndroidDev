@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">FinalExam</string>
+    <string name="number">Number</string>
+    <string name="dice">Кубик</string>
+    <string name="coin">Монета</string>
+</resources>
