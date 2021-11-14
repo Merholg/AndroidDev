@@ -36,10 +36,10 @@ class MainActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         val stateList = getStateList()
-        val stateIterator = stateList.iterator()
-        while (stateIterator.hasNext()) {
-            Log.d("APP_LOG", stateIterator.next().capital)
-        }
+//        val stateIterator = stateList.iterator()
+//        while (stateIterator.hasNext()) {
+//            Log.d("APP_LOG", stateIterator.next().capital)
+//        }
 
         recyclerView.adapter = StateRecyclerAdapter(stateList)
 
