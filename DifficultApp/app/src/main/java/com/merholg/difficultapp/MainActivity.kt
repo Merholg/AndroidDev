@@ -10,18 +10,19 @@ class MainActivity : AppCompatActivity() {
 
     private fun getStateList(): List<State> {
         val states: MutableList<State> = mutableListOf()
-        val stateItem = State("", "" , 0)
+        val stateItem = State(pennant = 0, region = "", capital = "", population = 0)
         val capitals: List<String> = this.resources.getStringArray(R.array.capital_names).toList()
         val capitalsIterator = capitals.iterator()
         val regions: List<String> = this.resources.getStringArray(R.array.region_names).toList()
         val regionsIterator = regions.iterator()
-        val pennants: List<Int> = this.resources.getIntArray(R.array.pennant_values).toList()
-        val pennantIterator = pennants.iterator()
+        val populations: List<Int> = this.resources.getIntArray(R.array.population_values).toList()
+        val populationsIterator = populations.iterator()
 
         while (capitalsIterator.hasNext()) {
             stateItem.capital = capitalsIterator.next()
             stateItem.region = regionsIterator.next()
-            stateItem.pennant = pennantIterator.next()
+            stateItem.pennant = 0
+            stateItem.population = populationsIterator.next()
             states.add(stateItem)
         }
         return states
@@ -33,7 +34,7 @@ class MainActivity : AppCompatActivity() {
 
         val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = CustomRecyclerAdapter(getStateList())
+        recyclerView.adapter = StateRecyclerAdapter(getStateList())
 
 
     }
