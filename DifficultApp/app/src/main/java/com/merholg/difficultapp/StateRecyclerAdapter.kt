@@ -1,5 +1,6 @@
 package com.merholg.difficultapp
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -15,7 +16,8 @@ class StateRecyclerAdapter(private val stateList: List<State>) :
     }
 
     override fun onBindViewHolder(holder: StateViewHolder, position: Int) {
-        val state = stateList[position]
+        val state = stateList.elementAt(position)
+
         holder.bind(state)
     }
 

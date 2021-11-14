@@ -15,7 +15,7 @@ class StateViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
 
         capitalTextView.text = state.capital
         regionTextView.text = state.region
-        pennantImageView.setImageResource(R.drawable.ic_launcher_foreground)
+    //    pennantImageView.setImageResource(R.drawable.ic_launcher_foreground)
 
         capitalTextView.setOnClickListener{
             val toast = Toast.makeText(itemView.context, "${state.population} чел.", Toast.LENGTH_SHORT)
