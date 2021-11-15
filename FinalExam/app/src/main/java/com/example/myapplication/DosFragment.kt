@@ -5,55 +5,57 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
+import kotlin.random.Random
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [DosFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+// constant for the persistence key
+private const val LAST_VECTOR_VALUE = "LAST_VECTOR_VALUE"
 class DosFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    // early initialization of the bottom navigation bar
+    private lateinit var dosImageView: ImageView
+    private lateinit var dosBeginButton: Button
+
+    private var directValue = 1
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_dos, container, false)
+        val view = inflater.inflate(R.layout.fragment_dos, container, false)
+        dosImageView = view.findViewById(R.id.dos_image_view)
+        dosBeginButton = view.findViewById(R.id.dos_begin_button)
+
+        if (savedInstanceState != null)
+            vector(savedInstanceState.getInt(LAST_VECTOR_VALUE))
+
+        dosBeginButton.setOnClickListener {
+            directValue = Random.nextInt(1, 6)
+            vector(directValue)
+        }
+
+        return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment DosFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            DosFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    private fun vector(directValue: Int) {
+       dosImageView.setImageResource(
+            when (directValue) {
+                1 -> R.drawable.sauvons
+                2 -> R.drawable.sauvons
+                3 -> R.drawable.sauvons
+                4 -> R.drawable.sauvons
+                5 -> R.drawable.sauvons
+                6 -> R.drawable.sauvons
+                else -> R.drawable.sauvons
             }
+        )
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        outState.putInt(LAST_VECTOR_VALUE, directValue)
+        super.onSaveInstanceState(outState)
     }
 }

@@ -17,6 +17,8 @@ class UnoFragment : Fragment() {
     private lateinit var unoResultTextView: TextView
     private lateinit var unoRunButton: Button
 
+    private var sizeValue: Int = 1
+
    override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -27,8 +29,10 @@ class UnoFragment : Fragment() {
        unoRunButton = view.findViewById(R.id.uno_run_button)
 
        // load if state saved
-       if (savedInstanceState != null)
-           unoResultTextView.text = savedInstanceState.getString(LAST_SCALAR_VALUE)
+       if (savedInstanceState != null) {
+           sizeValue = savedInstanceState.getInt(LAST_SCALAR_VALUE)
+           unoResultTextView.text = sizeValue.toString()
+       }
        // get new if no
        else
            scalar()
@@ -39,11 +43,12 @@ class UnoFragment : Fragment() {
 
     override fun onSaveInstanceState(outState: Bundle) {
         // save current value
-        outState.putString(LAST_SCALAR_VALUE, unoResultTextView.text.toString())
+        outState.putInt(LAST_SCALAR_VALUE, sizeValue)
         super.onSaveInstanceState(outState)
     }
 
     private fun scalar() {
-        unoResultTextView.text =  Random.nextInt(100).toString()
+        sizeValue = Random.nextInt(100)
+        unoResultTextView.text =  sizeValue.toString()
     }
  }
