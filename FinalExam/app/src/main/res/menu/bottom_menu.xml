@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:title="@string/number"
-        android:id="@+id/number"
-        android:icon="@drawable/number_icon"
+        android:title="@string/uno"
+        android:id="@+id/uno"
+        android:icon="@drawable/uno_icon"
         />
     <item
-        android:title="@string/dice"
-        android:id="@+id/dice"
-        android:icon="@drawable/dice_icon"
+        android:title="@string/dos"
+        android:id="@+id/dos"
+        android:icon="@drawable/dos_icon"
         />
     <item
-        android:title="@string/coin"
-        android:id="@+id/coin"
-        android:icon="@drawable/coin_icon"
+        android:title="@string/tres"
+        android:id="@+id/tres"
+        android:icon="@drawable/tres_icon"
         />
-
 </menu>
