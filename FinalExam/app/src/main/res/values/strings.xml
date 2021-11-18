@@ -3,9 +3,17 @@
     <string name="uno">Ini</string>
     <string name="dos">Eji</string>
     <string name="tres">Eta</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="contentDescription">Region Flag image</string>
+    <string name="capital">Город</string>
+    <string name="region">Регион</string>
+
+    <string name="no_activity_app_exist">No application to view</string>
+    <string name="what_see">What to watch?</string>
+
+    <string name="dos_begin_button">Get Info from Inet</string>
+    <string name="nothing"> </string>
     <string name="uno_run_button_text">RunIt</string>
     <string name="dos_run_button_text">BeginIt</string>
-    <string name="dos_images_views">Dos images views</string>
+    <string name="tres_images_views">Year ad could be here</string>
 </resources>

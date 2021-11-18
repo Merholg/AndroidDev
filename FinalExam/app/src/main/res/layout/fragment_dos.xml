@@ -6,26 +6,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".DosFragment">
 
-    <ImageView
-        android:id="@+id/dos_image_view"
-        android:src="@drawable/sauvons"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        app:layout_constraintTop_toTopOf="parent"
+    <TextView
+        android:id="@+id/dos_info_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dos_run_button_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:contentDescription="@string/dos_images_views" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/dos_begin_button"
-        android:text="@string/dos_run_button_text"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/dos_image_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:text="@string/dos_begin_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

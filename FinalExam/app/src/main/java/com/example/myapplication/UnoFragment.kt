@@ -7,48 +7,44 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import kotlin.random.Random
 
-// constant for the persistence key
-private const val LAST_SCALAR_VALUE = "LAST_SCALAR_VALUE"
 class UnoFragment : Fragment() {
 
-    // early initialization of the bottom navigation bar
-    private lateinit var unoResultTextView: TextView
-    private lateinit var unoRunButton: Button
+    private val stateList = getStateList()
 
-    private var sizeValue: Int = 1
+    private fun getStateList(): List<State> {
+        return listOf(
+            State(0, "Москва", "Москва", 12655050),
+            State(0, "Санкт-Петербург", "Санкт-Петербург", 5384342),
+            State(0, "Новосибирская область", "Новосибирск", 1620162),
+            State(0, "Свердловская область", "Екатеринбург", 1495066),
+            State(0, "Татарстан", "Казань", 1257341),
+            State(0, "Нижегородская область", "Нижний Новгород", 1244254),
+            State(0, "Челябинская область", "Челябинск", 1187960),
+            State(0, "Омская область", "Омск", 1139897),
+            State(0, "Самарская область", "Самара", 1144759),
+            State(0, "Ростовская область", "Ростов-на-Дону", 1137704),
+            State(0, "Башкортостан", "Уфа", 1125933),
+            State(0, "Красноярский край", "Красноярск", 1092851),
+            State(0, "Пермский край", "Пермь", 1049199),
+            State(0, "Воронежская область", "Воронеж", 1050602),
+            State(0, "Волгоградская область", "Волгоград", 1004763)
+        )
+    }
 
-   override fun onCreateView(
+
+    override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
        val view = inflater.inflate(R.layout.fragment_uno, container, false)
-       // only from view called findViewById in Fragments
-       unoResultTextView = view.findViewById(R.id.uno_result_text_view)
-       unoRunButton = view.findViewById(R.id.uno_run_button)
+       val recyclerView: RecyclerView = view.findViewById(R.id.recyclerView)
+       recyclerView.layoutManager = LinearLayoutManager(context)
+       recyclerView.adapter = StateRecyclerAdapter(stateList)
 
-       // load if state saved
-       if (savedInstanceState != null) {
-           sizeValue = savedInstanceState.getInt(LAST_SCALAR_VALUE)
-           unoResultTextView.text = sizeValue.toString()
-       }
-       // get new if no
-       else
-           scalar()
-       // get new if button pressed
-       unoRunButton.setOnClickListener {scalar()}
        return view
-    }
-
-    override fun onSaveInstanceState(outState: Bundle) {
-        // save current value
-        outState.putInt(LAST_SCALAR_VALUE, sizeValue)
-        super.onSaveInstanceState(outState)
-    }
-
-    private fun scalar() {
-        sizeValue = Random.nextInt(100)
-        unoResultTextView.text =  sizeValue.toString()
     }
  }
