@@ -1,19 +1,11 @@
 package com.example.myapplication
 
-import android.app.Activity
-import android.content.Context
-import android.os.Bundle
-import android.view.Gravity
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.ListFragment
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.internal.ContextUtils.getActivity
 
 class StateViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
 
