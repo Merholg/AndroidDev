@@ -18,7 +18,7 @@ class StateViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
 
         capitalTextView.text = state.capital
         regionTextView.text = state.region
-        pennantImageView.setImageResource(R.drawable.sauvons)
+        pennantImageView.setImageResource(R.drawable.city_86340)
 
         pennantImageView.setOnClickListener{
             StateSingleton.selectCapital = state.capital
