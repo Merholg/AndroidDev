@@ -27,19 +27,19 @@ class StateViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         pennantImageView.setImageResource(R.drawable.sauvons)
 
         capitalTextView.setOnClickListener{
-            val toast = Toast.makeText(itemView.context, "${state.population} чел.", Toast.LENGTH_SHORT)
-            val location = IntArray(2)
-            capitalTextView.getLocationOnScreen(location)
-            toast.setGravity(Gravity.TOP,0,location[1])
-            toast.show()
+//            val toast = Toast.makeText(itemView.context, "${state.population} чел.", Toast.LENGTH_SHORT)
+//            val location = IntArray(2)
+//            capitalTextView.getLocationOnScreen(location)
+//            toast.setGravity(Gravity.TOP,0,location[1])
+//            toast.show()
 
-    //        itemView.context as Activity
-    //        val fragManager: FragmentManager = (activity as AppCompatActivity).supportFragmentManager
-    //                fragManager
-    //                    .beginTransaction()
-    //                    .replace(R.id.fragment_container, DosFragment())
-    //                    .addToBackStack(null)
-    //                    .commit()
+            val activity: AppCompatActivity = itemView.context as AppCompatActivity
+            val fragManager: FragmentManager = activity.supportFragmentManager
+                    fragManager
+                        .beginTransaction()
+                        .replace(R.id.fragment_container, DosFragment())
+                        .addToBackStack(null)
+                        .commit()
 
         }
 
