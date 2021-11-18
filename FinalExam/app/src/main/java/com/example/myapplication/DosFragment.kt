@@ -1,7 +1,5 @@
 package com.example.myapplication
 
-import android.annotation.SuppressLint
-import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -11,7 +9,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 
 
 class DosFragment : Fragment() {
@@ -20,8 +17,9 @@ class DosFragment : Fragment() {
     private lateinit var dosBeginButton: Button
     private lateinit var dosInfoTextView: TextView
 
-    private var dosSelectNumber = 1
-    private var dosSelectWord = "NoOne"
+    private var dosSelectCapital: String = StateSingleton.selectCapital
+    private var dosSelectRegion: String = StateSingleton.selectRegion
+    private var dosSelectPopulation: Int = StateSingleton.selectPopulation
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,15 +31,13 @@ class DosFragment : Fragment() {
         dosBeginButton = view.findViewById(R.id.dos_begin_button)
         dosInfoTextView = view.findViewById(R.id.dos_info_text_view)
 
-        if (savedInstanceState != null) {
-            dosSelectNumber = savedInstanceState.getInt("DOS_SELECT_VALUE")
-            dosSelectWord = savedInstanceState.getString("DOS_SELECT_WORD")!!
-        }
-
-        val textSelectNumber = dosSelectNumber.toString()
-        dosInfoTextView.text = "$dosSelectWord $textSelectNumber"
-
-        val dosURL = "https://www.google.com/search?q=$dosSelectWord"
+        val dosJoinedInfo: String = listOf<String>("Capital: $dosSelectCapital",
+                                        "Region: $dosSelectRegion",
+                                        "Population: ${dosSelectPopulation.toString()}")
+                                        .joinToString(separator = "\n")
+        dosInfoTextView.text = dosJoinedInfo
+        val dosJoinedCapital: String = dosSelectCapital.split(" ").joinToString(separator = "+")
+        val dosURL = "https://www.google.com/search?q=$dosJoinedCapital"
         val dosIntent = Intent()
         dosIntent.action = Intent.ACTION_VIEW
         dosIntent.data = Uri.parse(dosURL)
@@ -54,11 +50,11 @@ class DosFragment : Fragment() {
         return view
     }
 
-    override fun onSaveInstanceState(outState: Bundle) {
+//    override fun onSaveInstanceState(outState: Bundle) {
         // save current value
-        outState.putInt("DOS_SELECT_VALUE", dosSelectNumber)
-        outState.putString("DOS_SELECT_WORD", dosSelectWord)
-        super.onSaveInstanceState(outState)
-    }
+//        outState.putInt("DOS_SELECT_VALUE", dosSelectNumber)
+//        outState.putString("DOS_SELECT_WORD", dosSelectWord)
+//        super.onSaveInstanceState(outState)
+//    }
 }
 
